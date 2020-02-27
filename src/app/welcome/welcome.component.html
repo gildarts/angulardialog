@@ -1,0 +1,10 @@
+<p>welcome works!!</p>
+
+<div *ngFor="let name of names">
+  <ng-container
+  *ngTemplateOutlet="namedis; context: {$implicit: name}"></ng-container>
+</div>
+
+<ng-template #namedis let-name>
+{{name}}
+</ng-template>
