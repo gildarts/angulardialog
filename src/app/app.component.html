@@ -1,2 +1,8 @@
 
 <router-outlet></router-outlet>
+
+<button mat-button (click)="alert()">Basic</button>
+
+<button mat-button [routerLink]="[{outlets: {'dialog': ['dialog']}}]" routerLinkActive="router-link-active" >Route to dialog</button>
+
+<router-outlet name="dialog"></router-outlet>
