@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Renderer2, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { OverlayRef } from '@angular/cdk/overlay';
+import { YM_DIALOG_ARGS } from '../ym-dialog.service';
 
 @Component({
   selector: 'app-scroll-dialog',
@@ -10,26 +11,19 @@ import { OverlayRef } from '@angular/cdk/overlay';
 export class ScrollDialogComponent implements OnInit, OnDestroy {
 
   constructor(
-    @Inject(DOCUMENT) private doc: Document,
-    private render: Renderer2,
-    private overlayRef: OverlayRef
+    private overlayRef: OverlayRef,
+    @Inject(YM_DIALOG_ARGS) public data: any
   ) {
-    console.log(overlayRef);
+    console.log(data);
   }
 
   ngOnInit(): void {
-    this.render.addClass(this.doc.body, 'modal-open');
   }
 
   ngOnDestroy() {
-    this.render.removeClass(this.doc.body, 'modal-open');
   }
 
   closeOverlay() {
     this.overlayRef.detach();
-  }
-
-  preeventBubble(e: MouseEvent) {
-    e.stopPropagation();
   }
 }

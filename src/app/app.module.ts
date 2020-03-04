@@ -15,6 +15,8 @@ import { PortalModule } from '@angular/cdk/portal';
 
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
+import { YmDialogOverlayDirective } from './ym-dialog-overlay.directive';
+import { YmDialogContainerDirective } from './ym-dialog-container.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
     SecondComponent,
     CustomDialogComponent,
     ScrollDialogComponent,
+    YmDialogOverlayDirective,
+    YmDialogContainerDirective,
   ],
   imports: [
     BrowserModule,

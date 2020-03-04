@@ -5,6 +5,7 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
+import { YmDialogService } from './ym-dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private overlay: Overlay,
-    private injector: Injector
+    private injector: Injector,
+    private ymd: YmDialogService
   ) {
 
   }
@@ -53,24 +55,8 @@ export class AppComponent implements OnInit {
   }
 
   showScrollable() {
-    const ol = this.overlay.create({
-      positionStrategy: this.overlay
-        .position()
-        .global()
-        .centerHorizontally()
-        .centerVertically(),
-      scrollStrategy: this.overlay
-        .scrollStrategies
-        .reposition(),
-      hasBackdrop: true,
-    });
-
-    const inject = Injector.create([{ provide: OverlayRef, useValue: ol }], this.injector);
-    ol.attach(new ComponentPortal(ScrollDialogComponent, null, inject));
-
-    ol.backdropClick().subscribe(v => {
-      console.log(v);
-      ol.detach();
+    this.ymd.open(ScrollDialogComponent, {
+      data: { name: 'zoe' }
     });
   }
 }
