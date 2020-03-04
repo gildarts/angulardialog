@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector, Inject, StaticProvider } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertComponent } from './alert/alert.component';
-import { Overlay } from '@angular/cdk/overlay';
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private overlay: Overlay
+    private overlay: Overlay,
+    private injector: Injector
   ) {
 
   }
@@ -65,7 +66,8 @@ export class AppComponent implements OnInit {
       // panelClass: ['modal', 'fade', 'show']
     });
 
-    ol.attach(new ComponentPortal(ScrollDialogComponent));
+    const inject = Injector.create([{ provide: OverlayRef, useValue: ol }], this.injector);
+    ol.attach(new ComponentPortal(ScrollDialogComponent,null, inject));
 
     ol.backdropClick().subscribe(v => {
       console.log(v);
