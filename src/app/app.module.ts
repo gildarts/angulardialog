@@ -8,23 +8,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogTriggerComponent } from './dialog-trigger/dialog-trigger.component';
 import { AlertComponent } from './alert/alert.component';
 import { SecondComponent } from './second/second.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+
+import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    DialogTriggerComponent,
-    AlertComponent,
-    SecondComponent,
+    // DialogTriggerComponent,
+    // AlertComponent,
+    // SecondComponent,
+    // CustomDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatButtonModule
+    // MatDialogModule,
+    MatButtonModule,
+    // OverlayModule,
+    // PortalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
