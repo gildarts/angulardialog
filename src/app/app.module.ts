@@ -14,6 +14,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
+import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
     AlertComponent,
     SecondComponent,
     CustomDialogComponent,
+    ScrollDialogComponent,
   ],
   imports: [
     BrowserModule,

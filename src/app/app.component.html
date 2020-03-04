@@ -7,4 +7,6 @@
 
 <button mat-button [routerLink]="[{outlets: {'dialog': ['dialog']}}]" routerLinkActive="router-link-active" >Route to dialog</button>
 
+<button mat-button (click)="showScrollable()">Scrollable</button>
+
 <router-outlet name="dialog"></router-outlet>
