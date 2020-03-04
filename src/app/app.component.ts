@@ -63,15 +63,14 @@ export class AppComponent implements OnInit {
         .scrollStrategies
         .reposition(),
       hasBackdrop: true,
-      // panelClass: ['modal', 'fade', 'show']
     });
 
     const inject = Injector.create([{ provide: OverlayRef, useValue: ol }], this.injector);
-    ol.attach(new ComponentPortal(ScrollDialogComponent,null, inject));
+    ol.attach(new ComponentPortal(ScrollDialogComponent, null, inject));
 
     ol.backdropClick().subscribe(v => {
       console.log(v);
       ol.detach();
-    })
+    });
   }
 }
