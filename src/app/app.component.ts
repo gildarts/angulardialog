@@ -62,6 +62,7 @@ export class AppComponent implements OnInit {
         .scrollStrategies
         .reposition(),
       hasBackdrop: true,
+      // panelClass: ['modal', 'fade', 'show']
     });
 
     ol.attach(new ComponentPortal(ScrollDialogComponent));
