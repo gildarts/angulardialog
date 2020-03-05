@@ -17,6 +17,7 @@ import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
 import { YmDialogOverlayDirective } from './ym-dialog-overlay.directive';
 import { YmDialogContainerDirective } from './ym-dialog-container.directive';
+import { Dialog2Component } from './dialog2/dialog2.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { YmDialogContainerDirective } from './ym-dialog-container.directive';
     ScrollDialogComponent,
     YmDialogOverlayDirective,
     YmDialogContainerDirective,
+    Dialog2Component,
   ],
   imports: [
     BrowserModule,

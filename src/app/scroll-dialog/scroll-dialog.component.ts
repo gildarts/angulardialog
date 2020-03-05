@@ -26,4 +26,8 @@ export class ScrollDialogComponent implements OnInit, OnDestroy {
   closeOverlay() {
     this.overlayRef.detach();
   }
+
+  complete() {
+    // this.overlayRef.close(return_value);
+  }
 }

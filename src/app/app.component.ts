@@ -6,6 +6,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { ScrollDialogComponent } from './scroll-dialog/scroll-dialog.component';
 import { YmDialogService } from './ym-dialog.service';
+import { Dialog2Component } from './dialog2/dialog2.component';
 
 @Component({
   selector: 'app-root',
@@ -55,8 +56,12 @@ export class AppComponent implements OnInit {
   }
 
   showScrollable() {
-    this.ymd.open(ScrollDialogComponent, {
+    const ref = this.ymd.open(ScrollDialogComponent, {
       data: { name: 'zoe' }
     });
+
+    // const data = await ref.closed().toPromise();
+
+    // console.log(data);
   }
 }
