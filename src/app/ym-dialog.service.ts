@@ -32,7 +32,7 @@ export class YmDialogService {
       { provide: YM_DIALOG_ARGS, useValue: options?.data }
     ]
 
-    const inject = Injector.create(providers, options?.parent);
+    const inject = Injector.create({ providers, parent: options?.parent });
 
     ol.attach(new ComponentPortal(modal, null, inject));
 
